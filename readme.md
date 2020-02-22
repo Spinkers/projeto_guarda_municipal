@@ -9,7 +9,7 @@ Por hora, muitas coisas ainda não foram decididas, por tanto este arquivo **Rea
 Responsáveis pelo back-end:
 - [Arthur Rocha](https://github.com/CatLad9)
 - [Gabriel Alves](https://github.com/gabrielalves96)
-- Gabrielly Campos
+- [Gabrielly Campos](https://github.com/Gabrielly98)
 - [Isaque Priuli](https://github.com/ipriulit)
 - [Lucas Rosado](https://www.github.com/Spinkers)
 - [Pedro Bastos](https://github.com/nadsse)
