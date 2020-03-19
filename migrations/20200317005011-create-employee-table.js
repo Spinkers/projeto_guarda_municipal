@@ -23,10 +23,14 @@ module.exports = {
         allowNull: false,
         field: 'full_name',
       },
-      isAdmin: {
-        type: Sequelize.BOOLEAN,
+      permissionID: {
+        type: Sequelize.INTEGER.UNSIGNED,
         allowNull: false,
-        field: 'is_admin',
+        field: 'permission_ID',
+        references: {
+          model: 'permission',
+          key: 'id',
+        },
       },
       createdAt: {
         type: Sequelize.DATE,
