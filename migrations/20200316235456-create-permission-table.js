@@ -1,32 +1,17 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('measure', {
+    return queryInterface.createTable('permission', {
       id: {
         type: Sequelize.INTEGER.UNSIGNED,
         autoIncrement: true,
         primaryKey: true,
       },
-      assistedID: {
-        type: Sequelize.INTEGER.UNSIGNED,
+      type: {
+        type: Sequelize.STRING(20),
         allowNull: false,
-        field: 'assisted_ID',
-        references: {
-          model: 'assisted',
-          key: 'id',
-        },
       },
-      authorID: {
-        type: Sequelize.INTEGER.UNSIGNED,
-        allowNull: false,
-        field: 'author_ID',
-        references: {
-          model: 'author',
-          key: 'id',
-        },
-      },
-      validity: {
-        type: Sequelize.DATE,
-        allowNull: false,
+      description: {
+        type: Sequelize.STRING(100),
       },
       createdAt: {
         type: Sequelize.DATE,
@@ -46,6 +31,6 @@ module.exports = {
   },
 
   down: (queryInterface) => {
-    return queryInterface.dropTable('measure');
+    return queryInterface.dropTable('permission');
   },
 };
