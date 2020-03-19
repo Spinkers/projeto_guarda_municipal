@@ -16,7 +16,7 @@ module.exports = {
         password: hash,
         email: 'example@example.com',
         full_name: 'Super Administrador',
-        is_admin: true,
+        permission_ID: 1,
         created_At: new Date(),
         updated_At: new Date(),
         deleted_At: null,
