@@ -15,11 +15,7 @@ module.exports = {
           key: 'id',
         },
       },
-      longitude: {
-        type: Sequelize.Sequelize.GEOMETRY,
-        allowNull: false,
-      },
-      latitude: {
+      position: {
         type: Sequelize.Sequelize.GEOMETRY,
         allowNull: false,
       },
