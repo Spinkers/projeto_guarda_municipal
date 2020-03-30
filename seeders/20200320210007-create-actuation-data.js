@@ -1,0 +1,87 @@
+'use strict';
+
+module.exports = {
+  up: (queryInterface) => {
+    return queryInterface.createTable('actuation', [
+      {
+        id: 1,
+        assistedID: 1,
+        measureID: 1,
+        authorID: 1,
+        employeeID: 2,
+        gmVehicle: 'DEF2A18',
+        taNumber: '0000123450',
+        observation: '',
+        audio: '12953484',
+        isActive: 1,
+        created_at: '2020-01-18 15:02:28',
+        updated_at: '2020-01-21 12:31:00',
+        deleted_at: null,
+      },
+      {
+        id: 2,
+        assistedID: 2,
+        measureID: 2,
+        authorID: 2,
+        employeeID: 3,
+        gmVehicle: BUE5621,
+        taNumber: '0000236544',
+        observation: '',
+        audio: '65987051',
+        isActive: 1,
+        created_at: '2020-01-18 15:02:28',
+        updated_at: '2020-01-21 12:31:00',
+        deleted_at: null,
+      },
+      {
+        id: 3,
+        assistedID: 3,
+        measureID: 3,
+        authorID: 3,
+        employeeID: 4,
+        gmVehicle: AUR6932,
+        taNumber: '0000267951',
+        observation: '',
+        audio: '56829456',
+        isActive: 1,
+        created_at: '2020-01-18 15:02:28',
+        updated_at: '2020-01-21 12:31:00',
+        deleted_at: null,
+      },
+      {
+        id: 4,
+        assistedID: 4,
+        measureID: 5,
+        authorID: 4,
+        employeeID: 5,
+        gmVehicle: KIB6589,
+        taNumber: '0000586941',
+        observation: '',
+        audio: '87986423',
+        isActive: 1,
+        created_at: '2020-01-18 15:02:28',
+        updated_at: '2020-01-21 12:31:00',
+        deleted_at: null,
+      },
+      {
+        id: 5,
+        assistedID: 5,
+        measureID: 5, 
+        authorID: 5,
+        employeeID: 6,
+        gmVehicle: FIU6521,
+        taNumber: '0000156732',
+        observation: '',
+        audio: '25649358',
+        isActive: 1,
+        created_at: '2020-01-18 15:02:28',
+        updated_at: '2020-01-21 12:31:00',
+        deleted_at: null,
+      }
+    ]);
+  },
+
+  down: (queryInterface) => {
+    return queryInterface.bulkDelete('actuation', {});
+  },
+};
