@@ -15,6 +15,15 @@ module.exports = {
           key: 'id',
         },
       },
+      measureID: {
+        type: Sequelize.INTEGER.UNSIGNED,
+        allowNull: false,
+        field: 'measure_ID,',
+        references: {
+          model: 'measure',
+          key: 'id',
+        },
+      },
       authorID: {
         type: Sequelize.INTEGER.UNSIGNED,
         allowNull: false,
