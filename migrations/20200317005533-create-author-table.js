@@ -6,15 +6,6 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
       },
-      assistedID: {
-        type: Sequelize.INTEGER.UNSIGNED,
-        allowNull: false,
-        field: 'assisted_ID',
-        references: {
-          model: 'assisted',
-          key: 'id',
-        },
-      },
       cpf: {
         type: Sequelize.CHAR(11),
         allowNull: false,
