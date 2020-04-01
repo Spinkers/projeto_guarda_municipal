@@ -22,6 +22,7 @@ module.exports = {
       isMain: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
+        field: 'is_main',
       },
       createdAt: {
         type: Sequelize.DATE,
