@@ -25,6 +25,7 @@ module.exports = {
       hasGun: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
+        field: 'has_gun',
       },
       observation: {
         type: Sequelize.STRING(300),

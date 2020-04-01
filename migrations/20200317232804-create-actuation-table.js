@@ -18,7 +18,7 @@ module.exports = {
       measureID: {
         type: Sequelize.INTEGER.UNSIGNED,
         allowNull: false,
-        field: 'measure_ID,',
+        field: 'measure_ID',
         references: {
           model: 'measure',
           key: 'id',
@@ -44,10 +44,12 @@ module.exports = {
       },
       gmVehicle: {
         type: Sequelize.CHAR(10),
+        field: 'gm_vehicle',
       },
       taNumber: {
         type: Sequelize.INTEGER.UNSIGNED,
         allowNull: false,
+        field: 'ta_number',
       },
       observation: {
         type: Sequelize.STRING(300),
@@ -58,6 +60,7 @@ module.exports = {
       isActive: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
+        field: 'is_active',
       },
       createdAt: {
         type: Sequelize.DATE,
