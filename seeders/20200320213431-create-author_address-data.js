@@ -7,7 +7,7 @@ module.exports = {
         street: 'Rua Escócia',
         number: '531',
         district: 'Água das Flores',
-        cep: '13207-551',
+        cep: '13207551',
         city: 'Jundiaí',
         state: 'São Paulo',
         created_at: '2020-01-18 15:02:28',
@@ -20,7 +20,7 @@ module.exports = {
         street: 'Rua Acre',
         number: '654',
         district: 'Água das Flores',
-        cep: '13203-280',
+        cep: '13203280',
         city: 'Jundiaí',
         state: 'São Paulo',
         created_at: '2020-01-18 15:02:28',
@@ -33,7 +33,7 @@ module.exports = {
         street: 'Rua Barbalha',
         number: '852',
         district: 'Água das Flores',
-        cep: '13214-353',
+        cep: '13214353',
         city: 'Jundiaí',
         state: 'São Paulo',
         created_at: '2020-01-18 15:02:28',
@@ -46,7 +46,7 @@ module.exports = {
         street: 'Rua Portugal',
         number: '369',
         district: 'Água das Flores',
-        cep: '13206-810',
+        cep: '13206810',
         city: 'Jundiaí',
         state: 'São Paulo',
         created_at: '2020-01-18 15:02:28',
@@ -59,17 +59,17 @@ module.exports = {
         street: 'Rua Caieiras',
         number: '741',
         district: 'Água das Flores',
-        cep: '13203-513',
+        cep: '13203513',
         city: 'Jundiaí',
         state: 'São Paulo',
         created_at: '2020-01-18 15:02:28',
         updated_at: '2020-01-21 12:31:00',
         deleted_at: null,
-      }
+      },
     ]);
   },
 
   down: (queryInterface) => {
     return queryInterface.bulkDelete('author_address', {});
-  }
+  },
 };
