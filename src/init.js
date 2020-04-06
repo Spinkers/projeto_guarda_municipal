@@ -1,7 +1,11 @@
 const db = require('./modules/database');
 const log = require('./modules/log');
+const mobileAuth = require('./modules/mobile/auth');
 
-module.exports = async () => {
+module.exports = async (app) => {
+  app.use(mobileAuth.initialize);
+  mobileAuth.configStrategies();
+
   try {
     // Testing DB connection
     await db.sequelize.authenticate();

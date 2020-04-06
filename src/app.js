@@ -5,9 +5,10 @@ const init = require('./init');
 const log = require('./modules/log');
 const errors = require('./modules/errors');
 const docs = require('./modules/docs');
+const mobile = require('./modules/mobile');
 
-const config = require('../src/config');
-const enums = require('../src/enums');
+const config = require('./config');
+const enums = require('./enums');
 
 // Unhandled Exception listeners
 process.on('unhandledRejection', (reason) => {
@@ -33,7 +34,7 @@ process.on('uncaughtException', (err) => {
 const app = express();
 
 // Initialization
-init()
+init(app)
   .then(() => {
     app.emit('ready');
   })
@@ -53,6 +54,8 @@ app.get('/', (_, res) => {
 if (config.get(enums.CONFIG_KEYS.ENV) !== enums.ENVS.PRODUCTION) {
   app.use('/docs', docs.API);
 }
+
+app.use('/mobile', mobile.API);
 
 // 404 catch all
 app.use((_, res) => {
