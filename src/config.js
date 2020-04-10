@@ -66,6 +66,15 @@ const config = convict({
       },
     },
   },
+  authentication: {
+    jwtSecret: {
+      doc: 'The secret key used to generate the jwt token',
+      format: String,
+      default: null,
+      env: 'GM_JWT_SECRET',
+      sensitive: true,
+    },
+  },
 });
 
 // Enable config override using scoped config files

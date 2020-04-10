@@ -2,14 +2,14 @@ const Sequelize = require('sequelize');
 const config = require('./config');
 
 // Models
-const User = require('./models/User');
+const Assisted = require('./models/Assisted');
 
 const db = {};
 
 const sequelize = new Sequelize(config);
 
 // Initializing all models
-const models = [User];
+const models = [Assisted];
 
 models.forEach((model) => {
   const modelInstance = model(sequelize, Sequelize.DataTypes);
