@@ -1,0 +1,58 @@
+paths:
+  /admin/assisted:
+    post:
+      tags: ['Admin']
+      summary: This endpoint is used to register a new assited
+      description:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                fullName:
+                  type: string
+                  example: 'Ana Carolina'
+                cpf:
+                  type: string
+                  example: '48293847283'
+                street:
+                  type: string
+                  example: 'Rua do Veladisso'
+                district:
+                  type: string
+                  example: 'Jardim Marcelino'
+                number:
+                  type: string
+                  example: '102'
+                cep:
+                  type: string
+                  example: '077700-000'
+                city:
+                  type: string
+                  example: 'Caieiras'
+                state:
+                  type: string
+                  example: 'São Paulo'
+                observation:
+                  type: string
+                  example: 'Come muito mas tem bom coração'
+                password:
+                  type: string
+                  example: 'dararata'
+                photograph:
+                  type: string
+                  format: binary
+            encoding:
+              profileImage: # Property name
+                contentType: image/png, image/jpeg
+
+    responses:
+      200:
+        description: Operation performed successfully
+
+      400:
+        $ref: '#/components/errors/badRequest'
+
+      500:
+        $ref: '#/components/errors/internalServerError'
