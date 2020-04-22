@@ -3,5 +3,6 @@ module.exports = {
     QUERY: 'query',
     BODY: 'body',
     PARAMS: 'params',
+    FILE: 'file',
   },
 };

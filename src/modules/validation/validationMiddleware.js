@@ -14,6 +14,9 @@ const validationMiddleware = (schema, property) => {
       case enums.REQUEST_PROPERTY.PARAMS:
         value = req.params;
         break;
+      case enums.REQUEST_PROPERTY.FILE:
+        value = req.body;
+        break;
       default:
         throw new Error('invalid validation field');
     }

@@ -6,6 +6,7 @@ const log = require('./modules/log');
 const errors = require('./modules/errors');
 const docs = require('./modules/docs');
 const mobile = require('./modules/mobile');
+const admin = require('./modules/admin');
 
 const config = require('./config');
 const enums = require('./enums');
@@ -56,6 +57,7 @@ if (config.get(enums.CONFIG_KEYS.ENV) !== enums.ENVS.PRODUCTION) {
 }
 
 app.use('/mobile', mobile.API);
+app.use('/admin', admin.API);
 
 // 404 catch all
 app.use((_, res) => {
