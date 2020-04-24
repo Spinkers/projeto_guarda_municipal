@@ -3,13 +3,14 @@ const config = require('./config');
 
 // Models
 const Assisted = require('./models/Assisted');
+const Author = require('./models/Author');
 
 const db = {};
 
 const sequelize = new Sequelize(config);
 
 // Initializing all models
-const models = [Assisted];
+const models = [Assisted, Author];
 
 models.forEach((model) => {
   const modelInstance = model(sequelize, Sequelize.DataTypes);
