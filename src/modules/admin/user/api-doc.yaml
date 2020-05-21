@@ -1,0 +1,45 @@
+paths:
+  /admin/user:
+    post:
+      security:
+        - bearerAuth: []
+      tags: ['Admin']
+      summary: This endpoint is used to register a new user employee
+      description:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                fullName:
+                  type: string
+                  example: 'Lucas Rosado'
+                login:
+                  type: string
+                  example: 'AdminLucas'
+                email:
+                  type: string
+                  example: 'lucas@spinkers.com'
+                permissionID:
+                  type: integer
+                  enum: [1, 2, 3, 4]
+                  example: 1
+                  description: >
+                    possible values:
+                      * `1` - Super Administrator
+                      * `2` - Administrator
+                      * `3` - Patrol
+                password:
+                  type: string
+                  example: '12345678'
+
+      responses:
+        200:
+          description: Operation performed successfully
+
+        400:
+          $ref: '#/components/errors/badRequest'
+
+        500:
+          $ref: '#/components/errors/internalServerError'
