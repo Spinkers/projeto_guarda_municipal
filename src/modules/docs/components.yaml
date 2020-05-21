@@ -46,3 +46,9 @@ components:
         schema:
           type: string
           example: 'Internal Server Error'
+
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

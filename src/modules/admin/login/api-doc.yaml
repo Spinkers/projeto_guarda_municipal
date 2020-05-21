@@ -1,0 +1,67 @@
+paths:
+  /admin/login:
+    post:
+      tags: ['Admin', 'Login']
+      summary: Returns an object containing the token and user information
+      description: It is necessary to pass the username and password as parameters
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  example: 'superAdmin'
+                password:
+                  type: string
+                  example: '12345678'
+
+      responses:
+        200:
+          description: An object with token, id and name
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                    example: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImlhdCI6MTU3OTc3NzgxOCwiZXhwIjoxNTc5ODY0MjE4fQ.EpvZcDxfI9WFvAew25Tilk8VsU0id3Nwsq556iTC4rI'
+                  id:
+                    type: integer
+                    example: 1
+                  username:
+                    type: string
+                    example: 'Super Administrador'
+
+        400:
+          $ref: '#/components/errors/badRequest'
+
+        401:
+          $ref: '#/components/errors/unauthorized'
+
+        500:
+          $ref: '#/components/errors/internalServerError'
+
+  /admin/login/verifyToken:
+    post:
+      security:
+        - bearerAuth: []
+      tags: ['Admin', 'Login']
+      summary: Returns an status representing if the token is valid or not
+      description: if the token is valid it will return the status 200, othewise it will return 401
+
+      responses:
+        200:
+          description: Means that the token is valid
+          content:
+            schema:
+              type: string
+              example: 'ok'
+
+        401:
+          $ref: '#/components/errors/unauthorized'
+
+        500:
+          $ref: '#/components/errors/internalServerError'
