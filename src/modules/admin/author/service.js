@@ -55,4 +55,19 @@ module.exports = {
 
     return true;
   },
+  getAll: async () => {
+    let authorModels;
+    try {
+      authorModels = await author.findAll({
+        attributes: ['id', 'fullName', 'cpf', 'dvc'],
+    });
+    } catch (err) {
+      throw new errors.DatabaseError(err);
+    }
+    const authors = authorModels.map((model) => {
+      const assitedObject = model.get({ plain: true });
+      return assitedObject;
+    });
+    return authors;
+  },
 };
