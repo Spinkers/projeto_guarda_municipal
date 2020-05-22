@@ -16,4 +16,9 @@ router.post(
   validationMiddleware(schemas.register, 'file'),
   controller.register,
 );
+
+router.get("/", 
+  controller.getAll,  
+);
+
 module.exports = router;
