@@ -13,15 +13,4 @@ module.exports = {
       next(err);
     }
   },
-  getAll: async(req, res, next) => {
-    try {
-      const response = await service.getAll();
-      if (response === false) {
-        res.sendStatus(404);
-      }
-      res.json(response);
-    } catch (err) {
-      next(err);
-    }
-  },
 };
