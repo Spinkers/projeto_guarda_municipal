@@ -65,8 +65,8 @@ module.exports = {
       throw new errors.DatabaseError(err);
     }
     const authors = authorModels.map((model) => {
-      const assitedObject = model.get({ plain: true });
-      return assitedObject;
+      const authorObject = model.get({ plain: true });
+      return authorObject;
     });
     return authors;
   },
