@@ -54,4 +54,19 @@ module.exports = {
 
     return true;
   },
+  getAll: async () => {
+    let assistedModels;
+    try {
+      assistedModels = await assisted.findAll({
+        attributes: ['id', 'fullName', 'cpf'],
+    });
+    } catch (err) {
+      throw new errors.DatabaseError(err);
+    }
+    const assisteds = assistedModels.map((model) => {
+      const assitedObject = model.get({ plain: true });
+      return assitedObject;
+    });
+    return assisteds;
+  },
 };
