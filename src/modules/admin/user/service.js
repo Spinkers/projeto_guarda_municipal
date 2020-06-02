@@ -36,4 +36,19 @@ module.exports = {
 
     return true;
   },
+  getAll: async () => {
+    let employeeModels;
+    try {
+      employeeModels = await employee.findAll({
+        attributes: ['fullName', 'login', 'email', 'permissionID'],
+      });
+    } catch (err) {
+      throw new errors.DatabaseError(err);
+    }
+    const employees = employeeModels.map((model) => {
+      const employeeObject = model.get({ plain: true });
+      return employeeObject;
+    });
+    return employees;
+  },
 };

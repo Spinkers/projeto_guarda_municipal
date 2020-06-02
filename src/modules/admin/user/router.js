@@ -7,4 +7,5 @@ const schemas = require('./validations');
 const router = express.Router();
 
 router.post('/', validationMiddleware(schemas.register, 'body'), controller.register);
+router.get('/', controller.getAll);
 module.exports = router;
