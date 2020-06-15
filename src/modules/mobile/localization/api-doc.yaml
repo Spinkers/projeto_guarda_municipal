@@ -1,0 +1,29 @@
+paths:
+  /mobile/localization:
+    post:
+      security:
+        - bearerAuth: []
+      tags: ['Assisted']
+      summary: This endpoint is used to update the assisted geographic location.
+      description:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                position:
+                  type: array
+                  items:
+                    type: integer
+                  example: [-23.181884, -46.883018]
+
+      responses:
+        200:
+          description: Operation performed successfully
+
+        400:
+          $ref: '#/components/errors/badRequest'
+
+        500:
+          $ref: '#/components/errors/internalServerError'

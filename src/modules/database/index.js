@@ -5,13 +5,14 @@ const config = require('./config');
 const Assisted = require('./models/Assisted');
 const Author = require('./models/Author');
 const Employee = require('./models/Employee');
+const GeographicLocalization = require('./models/GeographicLocation');
 
 const db = {};
 
 const sequelize = new Sequelize(config);
 
 // Initializing all models
-const models = [Assisted, Author, Employee];
+const models = [Assisted, Author, Employee, GeographicLocalization];
 
 models.forEach((model) => {
   const modelInstance = model(sequelize, Sequelize.DataTypes);
